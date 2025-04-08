@@ -4,10 +4,10 @@ def Largest_Sum(triangle_list:list[list[int]]): # Expects a triangle like format
     return helper_Largest_Sum(i=0, j=0, cache={}, num_list=triangle_list)
 
 def helper_Largest_Sum(i, j, cache, num_list):
-    if i == len(num_list) - 1: # reaches the base of the triangle
-        return num_list[i][j]
+    if i == len(num_list) - 1: # Reaches the base of the triangle
+        return num_list[i][j] # Returns the value given current position
     if (i, j) in cache:
-        return cache[(i, j)] # precomputated result
+        return cache[(i, j)] # Precomputated result
     
     down_left = helper_Largest_Sum(i+1, j, cache, num_list) # Left recursion
     down_right = helper_Largest_Sum(i+1, j+1, cache, num_list) # Right recursion
